@@ -34,8 +34,6 @@ equalButton.addEventListener('click', showResult);
 // Functions
 function clear() {
     result.textContent = '0';
-    calculation.textContent = `${operand1} ${currentOperator}`;
-    operand2 = 0;
 }
 
 function clearAll () {
@@ -50,7 +48,7 @@ function clearAll () {
 
 function typeNumber() {
     if (result.textContent.length < 8) {
-        if (result.textContent === '0' || operand1 == result.textContent || result.textContent === 'ERR') {
+        if (result.textContent === '0' || result.textContent === 'ERR') {
             result.textContent = this.textContent;
         } else {
             result.textContent += this.textContent;
