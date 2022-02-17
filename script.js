@@ -33,7 +33,6 @@ equalButton.addEventListener('click', showResult);
 
 // Functions
 function clear() {
-    calculation.textContent = '';
     result.textContent = '0';
     calculation.textContent = `${operand1} ${currentOperator}`;
     operand2 = 0;
