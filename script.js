@@ -19,7 +19,6 @@ result.textContent = '0';
 
 // Event listeners
 clearAllButton.addEventListener('click', clearAll);
-
 clearButton.addEventListener('click', clear);
 
 for (const digit of digits) {
@@ -34,6 +33,7 @@ equalButton.addEventListener('click', showResult);
 
 // Functions
 function clear() {
+    calculation.textContent = '0';
     result.textContent = '0';
     calculation.textContent = `${operand1} ${currentOperator}`;
     operand2 = 0;
