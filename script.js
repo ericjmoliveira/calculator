@@ -3,8 +3,8 @@ const calculation = document.querySelector('.calculation');
 const result = document.querySelector('.result');
 const clearAllButton = document.querySelector('.clear-all-btn');
 const clearButton = document.querySelector('.clear-btn');
-const operators = document.querySelectorAll('.operator');
 const digits = document.querySelectorAll('.digit');
+const operators = document.querySelectorAll('.operator');
 const equalButton = document.querySelector('.equal-btn');
 
 // Calculation variables
@@ -32,10 +32,6 @@ for (const operator of operators) {
 equalButton.addEventListener('click', showResult);
 
 // Functions
-function clear() {
-    result.textContent = '0';
-}
-
 function clearAll () {
     calculation.textContent = '';
     result.textContent = '0';
@@ -44,6 +40,10 @@ function clearAll () {
     currentResult = 0;
     currentOperator = '';
     operatorActive = false;
+}
+
+function clear() {
+    result.textContent = '0';
 }
 
 function typeNumber() {
