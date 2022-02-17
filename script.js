@@ -48,7 +48,7 @@ function clearAll () {
 
 function typeNumber() {
     if (result.textContent.length < 8) {
-        if (result.textContent === '0' || result.textContent === 'ERR') {
+        if (result.textContent === '0' || result.textContent == currentResult || result.textContent === 'ERR') {
             result.textContent = this.textContent;
         } else {
             result.textContent += this.textContent;
