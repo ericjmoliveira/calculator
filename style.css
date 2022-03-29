@@ -82,7 +82,19 @@ button:hover {
 @media screen and (max-width: 480px) {
 	.container {
 		width: 90vw;
-		height: 60vh;
+		height: 90vh;
 		margin: 25px auto;
+	}
+
+	.calculation {
+		font-size: 1.5rem;
+	}
+
+	.result {
+		font-size: 4.5rem;
+	}
+
+	button {
+		font-size: 2rem;
 	}
 }
