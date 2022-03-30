@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: bold;
 }
 
@@ -42,7 +42,7 @@ body {
 
 .result {
 	flex: 2;
-	font-size: 3.5rem;
+	font-size: 3rem;
 }
 
 button {
@@ -83,7 +83,7 @@ button:hover {
 	.container {
 		width: 90vw;
 		height: 90vh;
-		margin: 25px auto;
+		margin: 2rem auto;
 	}
 
 	.calculation {
@@ -91,7 +91,7 @@ button:hover {
 	}
 
 	.result {
-		font-size: 4.5rem;
+		font-size: 4rem;
 	}
 
 	button {
