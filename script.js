@@ -22,91 +22,92 @@ clearAllButton.addEventListener('click', clearAll);
 clearButton.addEventListener('click', clear);
 
 for (const digit of digits) {
-	digit.addEventListener('click', typeNumber);
+    digit.addEventListener('click', typeNumber);
 }
 
 for (const operator of operators) {
-	operator.addEventListener('click', chooseOperator);
+    operator.addEventListener('click', chooseOperator);
 }
 
 equalButton.addEventListener('click', showResult);
 
 // Functions
 function clearAll() {
-	calculation.textContent = '';
-	result.textContent = '0';
-	operand1 = 0;
-	operand2 = 0;
-	currentResult = 0;
-	currentOperator = '';
-	operatorActive = false;
+    calculation.textContent = '';
+    result.textContent = '0';
+    operand1 = 0;
+    operand2 = 0;
+    currentResult = 0;
+    currentOperator = '';
+    operatorActive = false;
 }
 
 function clear() {
-	result.textContent = '0';
+    if (operand1 !== 0 && !operatorActive) clearAll();
+    else result.textContent = '0';
 }
 
 function typeNumber() {
-	if (result.textContent.length < 9) {
-		if (result.textContent === '0' || result.textContent == currentResult) {
-			result.textContent = this.textContent;
-		} else {
-			result.textContent += this.textContent;
-		}
-	}
+    if (result.textContent.length < 9) {
+        if (result.textContent === '0' || result.textContent == currentResult) {
+            result.textContent = this.textContent;
+        } else {
+            result.textContent += this.textContent;
+        }
+    }
 }
 
 function chooseOperator() {
-	if (!operatorActive) {
-		operatorActive = true;
-		operand2 = 0;
-	}
+    if (!operatorActive) {
+        operatorActive = true;
+        operand2 = 0;
+    }
 
-	if (this.textContent !== currentOperator) {
-		currentOperator = this.textContent;
-	}
+    if (this.textContent !== currentOperator) {
+        currentOperator = this.textContent;
+    }
 
-	if (!operand1) {
-		operand1 = Number(result.textContent);
-		result.textContent = '0';
-	}
+    if (!operand1) {
+        operand1 = Number(result.textContent);
+        result.textContent = '0';
+    }
 
-	calculation.textContent = `${operand1} ${currentOperator}`;
+    calculation.textContent = `${operand1} ${currentOperator}`;
 }
 
 function showResult() {
-	if (currentOperator) {
-		if (!operand2) operand2 = Number(result.textContent);
+    if (currentOperator) {
+        if (!operand2) operand2 = Number(result.textContent);
 
-		switch (currentOperator) {
-			case '+':
-				currentResult = operand1 + operand2;
-				break;
-			case '-':
-				currentResult = operand1 - operand2;
-				break;
-			case 'x':
-				currentResult = operand1 * operand2;
-				break;
-			case '÷':
-				currentResult = operand1 / operand2;
-				break;
-		}
+        switch (currentOperator) {
+            case '+':
+                currentResult = operand1 + operand2;
+                break;
+            case '-':
+                currentResult = operand1 - operand2;
+                break;
+            case 'x':
+                currentResult = operand1 * operand2;
+                break;
+            case '÷':
+                currentResult = operand1 / operand2;
+                break;
+        }
 
-		if (
-			currentResult.toString().length > 9 ||
-			isNaN(currentResult) ||
-			!isFinite(currentResult)
-		) {
-			calculation.textContent = '';
-			clearAll();
-			result.textContent = '0';
-			alert('Result is longer than 9 digits!');
-		} else {
-			calculation.textContent = `${operand1} ${currentOperator} ${operand2} =`;
-			result.textContent = currentResult;
-			operand1 = currentResult;
-			operatorActive = false;
-		}
-	}
+        if (
+            currentResult.toString().length > 9 ||
+            isNaN(currentResult) ||
+            !isFinite(currentResult)
+        ) {
+            calculation.textContent = '';
+            clearAll();
+            result.textContent = '0';
+            alert('Result is longer than 9 digits!');
+        } else {
+            calculation.textContent = `${operand1} ${currentOperator} ${operand2} =`;
+            result.textContent = currentResult;
+            operand1 = currentResult;
+            operatorActive = false;
+        }
+    }
 }
