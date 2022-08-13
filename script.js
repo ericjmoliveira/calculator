@@ -49,6 +49,8 @@ function clear() {
 
 function typeNumber() {
     if (result.textContent.length < 9) {
+        if (result.textContent.includes('.') && this.textContent === '.') return;
+
         if (result.textContent === '0' || result.textContent == currentResult) {
             result.textContent = this.textContent;
         } else {
@@ -58,6 +60,8 @@ function typeNumber() {
 }
 
 function chooseOperator() {
+    if (result.textContent.includes('.') && result.textContent.length === 1) return;
+
     if (!operatorActive) {
         operatorActive = true;
         operand2 = 0;
