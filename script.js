@@ -103,10 +103,8 @@ function showResult() {
             isNaN(currentResult) ||
             !isFinite(currentResult)
         ) {
-            calculation.textContent = '';
+            alert(`Result is longer than 9 digits:\n${currentResult}`);
             clearAll();
-            result.textContent = '0';
-            alert('Result is longer than 9 digits!');
         } else {
             calculation.textContent = `${operand1} ${currentOperator} ${operand2} =`;
             result.textContent = currentResult;
