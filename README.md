@@ -1,5 +1,7 @@
 # Calculator
 
-Simple calculator built with HTML, CSS and JavaScript.
+Simple calculator built with HTML, CSS and JavaScript
 
-Link: https://ericjmoliveira.github.io/calculator/
+I learned mainly about functional programming, DOM manipulation, flexbox and grid layout.
+
+Online calculator: https://ericjmoliveira.github.io/calculator/
